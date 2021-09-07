@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Post
 
 # List of Dictionaries
 posts = [
@@ -19,7 +20,7 @@ posts = [
 def home(request):
     # Dictionary to pass into render function
     context = {
-        'posts': posts
+        'posts': Post.objects.all()
     }
 
     # returns HTTP response in the background containing the code from the template file

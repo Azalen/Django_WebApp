@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from users import views as user_views
+
 """
 LOGIK: localhost/blog -> wird an blog.urls weitergesendet 
                         -> dort wirt der Rest der URL ausgewertet
@@ -24,4 +26,5 @@ LOGIK: localhost/blog -> wird an blog.urls weitergesendet
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('blog.urls')),
+    path('register/', user_views.register, name='register'),
 ]
