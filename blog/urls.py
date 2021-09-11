@@ -1,11 +1,13 @@
 from blog.models import Post
 from django.urls import path
-from .views import PostListView, PostDetailView, PostCreateView, PostUpdateView, PostDeleteView
+from .views import PostListView, PostDetailView, PostCreateView, PostUpdateView, PostDeleteView, UserPostListView
     # looks for <app>/<model>_<viewtype>.html but we only have home.html
 from . import views
 
 urlpatterns = [
     path('', PostListView.as_view(), name='blog-home'),
+    path('user/<str:username>', UserPostListView.as_view(), name='user-posts'),
+
     path('about/', views.about, name='blog-about'),
     
     # We need URL for each blogpost
