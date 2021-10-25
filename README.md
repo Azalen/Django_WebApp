@@ -68,6 +68,7 @@ Never Hardcode Login-Information into your .py files but use Operating System En
 -> Restart, test with ~/source $EMAIL_USER afterwards
 
 ## 0.5 Deployment using Linode
+ACHTUNG: Funktionierte nur mit Ubuntu18, bei neueren Versionen war irgendwas mit den Rechten komisch
 
 -> SSH into machine and install some updates
     `ssh root@172.105.77.247`
@@ -170,4 +171,4 @@ Never Hardcode Login-Information into your .py files but use Operating System En
     (venv) azalen@django-server:~$ sudo chmod -R 775 Django_WebApp/media/
 
 -> Move sensitive Information to Config File
-
+    
